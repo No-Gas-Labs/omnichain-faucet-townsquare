@@ -1,13 +1,34 @@
-// Simulated faucet activation (TON, EOS, SUI)
-document.addEventListener("DOMContentLoaded", () => {
-  const npcTiles = document.querySelectorAll(".npc");
+// js/faucet.js — ultra-microdrip faucet logic for NGL™ TownSquare
 
-  npcTiles.forEach((tile) => {
-    tile.addEventListener("dblclick", () => {
-      const faucetChains = ["TON", "EOS", "SUI"];
-      const chosen = faucetChains[Math.floor(Math.random() * faucetChains.length)];
+const Faucet = {
+  shrineNetworks: ["EOS", "TON", "SUI"],
+  dripAmounts: {
+    EOS: 0.0005,
+    TON: 0.0012,
+    SUI: 0.0008
+  },
+  state: {
+    lastClaimed: null,
+    availableShrines: ["EOS", "TON", "SUI"]
+  },
+  claim(network) {
+    if (!this.shrineNetworks.includes(network)) {
+      alert(`❌ Unknown shrine network: ${network}`);
+      return;
+    }
 
-      alert(`🔓 Faucet Request Sent to ${chosen} Shrine\n\n📥 Awaiting token infusion…`);
-    });
-  });
-});
+    const now = Date.now();
+    const cooldown = 1000 * 60 * 60 * 1; // 1 hour cooldown
+    if (this.state.lastClaimed && now - this.state.lastClaimed < cooldown) {
+      alert("⏳ Shrine still recharging. Come back after the cooldown.");
+      return;
+    }
+
+    const drip = this.dripAmounts[network];
+    alert(`💧 You’ve received ${drip} ${network} from the ${network} Shrine.`);
+
+    this.state.lastClaimed = now;
+  }
+};
+
+export default Faucet;
