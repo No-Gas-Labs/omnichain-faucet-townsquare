@@ -37,6 +37,22 @@
       to { opacity: 1; }
     }
   </style>
+  #shrines {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 2em;
+}
+
+#shrines button {
+  background: #1a1a2e;
+  color: #ffd700;
+  font-size: 1.2em;
+  border: 2px solid #ff00c8;
+  padding: 1em;
+  border-radius: 8px;
+  cursor: pointer;
+}
 </head>
 <body>
   <div id="grid"></div>
@@ -45,4 +61,13 @@
   <script src="js/faucet.js"></script>
   <script src="js/wallet.js"></script>
 </body>
+  <div id="shrines">
+  <button onclick="Faucet.claim('EOS')">🛕 EOS Shrine</button>
+  <button onclick="Faucet.claim('TON')">🛕 TON Shrine</button>
+  <button onclick="Faucet.claim('SUI')">🛕 SUI Shrine</button>
+</div>
 </html>
+<script type="module">
+  import Faucet from './js/faucet.js';
+  window.Faucet = Faucet;
+</script>
