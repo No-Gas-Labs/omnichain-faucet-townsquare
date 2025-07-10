@@ -1,73 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>🏛️ Omnichain Faucet TownSquare</title>
-  <style>
-    body {
-      background: #0f0f23;
-      color: #ffd700;
-      font-family: 'Courier New', monospace;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-    }
-    #grid {
-      display: grid;
-      grid-template-columns: repeat(20, 5vw);
-      grid-template-rows: repeat(20, 5vw);
-      gap: 1px;
-      margin: 0 auto;
-      max-width: 100vw;
-      max-height: 100vh;
-    }
-    .tile {
-      background: #1a1a2e;
-      border: 1px solid #333;
-      width: 100%;
-      height: 100%;
-    }
-    .npc {
-      background: #ff00c8;
-      animation: pulse 2s infinite alternate;
-    }
-    @keyframes pulse {
-      from { opacity: 0.5; }
-      to { opacity: 1; }
-    }
-  </style>
-  #shrines {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  padding: 2em;
-}
-
-#shrines button {
-  background: #1a1a2e;
-  color: #ffd700;
-  font-size: 1.2em;
-  border: 2px solid #ff00c8;
-  padding: 1em;
-  border-radius: 8px;
-  cursor: pointer;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omnichain Faucet TownSquare</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="grid"></div>
-  <script src="js/town.js"></script>
-  <script src="js/npc.js"></script>
-  <script src="js/faucet.js"></script>
-  <script src="js/wallet.js"></script>
+  <header class="header">
+    <h1>Omnichain Faucet TownSquare</h1>
+    <button id="walletButton">Connect Wallet</button>
+  </header>
+  <section id="xp">XP: <span id="xpCount">0</span></section>
+  <main id="townGrid">
+    <div class="faucet" data-chain="EOS">EOS Faucet</div>
+    <div class="faucet" data-chain="TON">TON Faucet</div>
+    <div class="faucet" data-chain="SUI">SUI Faucet</div>
+  </main>
+
+  <div id="walletModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <p>Wallet connection coming soon.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-  <div id="shrines">
-  <button onclick="Faucet.claim('EOS')">🛕 EOS Shrine</button>
-  <button onclick="Faucet.claim('TON')">🛕 TON Shrine</button>
-  <button onclick="Faucet.claim('SUI')">🛕 SUI Shrine</button>
-</div>
 </html>
-<script type="module">
-  import Faucet from './js/faucet.js';
-  window.Faucet = Faucet;
-</script>
