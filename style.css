@@ -1,0 +1,102 @@
+// 🪓 No_Gas_Labs™ — TownSquare Build
+// Fuck yes. Let’s make these wallets sing.
+// If this breaks, blame recursion not the dev.
+
+body {
+  background: #001b44;
+  color: #ffd700;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-auto-rows: 12vw;
+  gap: 2px;
+  max-width: 100vw;
+  touch-action: manipulation;
+}
+
+.tile {
+  background: #0f0f23;
+  border: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4vw;
+}
+
+.npc {
+  background: #ff00c8;
+  animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  from { opacity: 0.7; }
+  to { opacity: 1; }
+}
+
+#shrines {
+  display: flex;
+  justify-content: space-around;
+  padding: 1em;
+}
+
+#shrines button {
+  background: #0f0f23;
+  color: #ffd700;
+  font-size: 1.2em;
+  border: 2px solid #ff00c8;
+  border-radius: 8px;
+  padding: 0.8em 1em;
+  touch-action: manipulation;
+}
+
+#xp-counter {
+  text-align: center;
+  margin-top: 0.5em;
+  font-size: 1.2em;
+}
+
+#wallet-btn {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  background: #ff00c8;
+  color: #fff;
+  border: none;
+  padding: 0.8em 1em;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+#wallet-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  color: #ffd700;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#wallet-modal.open {
+  display: flex;
+}
+
+#wallet-modal button {
+  margin-top: 1em;
+  padding: 0.6em 1.2em;
+  background: #ff00c8;
+  color: #fff;
+  border: none;
+  font-size: 1em;
+  border-radius: 6px;
+}
