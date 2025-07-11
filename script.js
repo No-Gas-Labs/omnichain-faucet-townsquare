@@ -51,6 +51,7 @@ function claim(network) {
   if (xp >= 25) document.body.classList.add('tier2');
   if (claims === 77) alert('🌑 A hidden shrine awakens.');
   if (Math.random() < 0.05) dropScroll();
+  console.log('🔧 What the fuck did we just do?', { xp, claims });
 }
 
 function talk() {
@@ -62,6 +63,7 @@ function talk() {
   ];
   alert(lines[Math.floor(Math.random() * lines.length)]);
   if (Math.random() < 0.05) dropScroll();
+  console.log('🔧 What the fuck did we just do? NPC chat fired.');
 }
 
 function npcInterrupt() {
@@ -90,6 +92,7 @@ function logMessage(msg) {
 }
 
 function startAmbient() {
+  // fuck yeah, background hum for the shrine
   const ctx = new (window.AudioContext || window.webkitAudioContext)();
   const osc = ctx.createOscillator();
   const gain = ctx.createGain();
