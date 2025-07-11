@@ -1,8 +1,12 @@
-/* 🪓 No_Gas_Labs™ — TownSquare Build */
-/* Fuck yes. Let’s make these wallets sing. */
-/* If this breaks, blame recursion not the dev. */
-
-body {
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omnichain Faucet TownSquare</title>
+  <style>
+    /* 🪓 No_Gas_Labs™ — TownSquare Build */
+    /* Fuck yes. Let’s make these wallets sing. */
+    /* If this breaks, blame recursion not the dev. */body {
   background: #0d0d2b;
   color: #ffd700;
   font-family: 'Georgia', serif;
@@ -106,6 +110,7 @@ main {
 
 #xp {
   font-size: 1em;
+  padding: 0.5em 1em;
 }
 
 #log {
@@ -133,3 +138,10 @@ body.tier2 {
   0% { transform: translate(0, 0); }
   100% { transform: translate(20px, 20px); }
 }
+
+  </style>
+</head>
+<body>
+<!-- Body content here -->
+</body>
+</html>
