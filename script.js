@@ -1,4 +1,5 @@
 // 🪓 No_Gas_Labs™ — TownSquare Build // Fuck yes. Let’s make these wallets sing. // If this breaks, blame recursion not the dev.
+// 🪓 No_Gas_Labs™ — TownSquare Build // Fuck yes. Let’s make these wallets sing. // If this breaks, blame recursion not the dev.
 
 document.addEventListener('DOMContentLoaded', () => { const grid = document.getElementById('grid'); const xpCounter = document.getElementById('xpCount'); const modal = document.getElementById('wallet-modal'); const walletBtn = document.getElementById('wallet-btn'); const closeBtn = document.getElementById('wallet-close');
 
@@ -47,13 +48,7 @@ window.claimFaucet = Faucet.claim.bind(Faucet);
 
 walletBtn.addEventListener('click', () => modal.classList.remove('hidden')); closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
 
-document.body.addEventListener('click', startAmbient, { once: true }); setInterval(npcInterrupt, 15000);
-
-function npcInterrupt() { const messages = [ 'Vendy: I used to vend tokens. Now I vend shame.', 'Machiavelli: UX fatigue is a design decision.', 'Dr. Trask: The shrine remembers your loops.' ]; logMessage(messages[Math.floor(Math.random() * messages.length)]); }
-
 function dropScroll() { const scrolls = [ 'Scroll I: The shrine feeds on loops.', 'Scroll II: Featherstone whispers from Loop Zero.', 'Scroll III: Burn tokens, gain favor.' ]; logMessage('📜 ' + scrolls[Math.floor(Math.random() * scrolls.length)]); }
 
-function logMessage(msg) { const log = document.getElementById('log'); const p = document.createElement('p'); p.textContent = msg; log.appendChild(p); }
-
-function startAmbient() { const ctx = new (window.AudioContext || window.webkitAudioContext)(); const osc = ctx.createOscillator(); const gain = ctx.createGain(); osc.type = 'sine'; osc.frequency.value = 60; gain.gain.value = 0.02; osc.connect(gain).connect(ctx.destination); osc.start(); } });
+function logMessage(msg) { const log = document.getElementById('log'); const p = document.createElement('p'); p.textContent = msg; log.appendChild(p); } });
 
