@@ -1,5 +1,6 @@
-/* 🪓 No_Gas_Labs™ — TownSquare Build / / Fuck yes. Let’s make these wallets sing. / / If this breaks, blame recursion not the dev. */
-
+/* 🪓 No_Gas_Labs™ — TownSquare Build
+   Fuck yes. Let’s make these wallets sing.
+   If this breaks, blame recursion not the dev. */
 body { margin: 0; padding: 0; background: #0d0d2b; color: #ffd700; font-family: 'Courier New', monospace; animation: glitch 5s infinite; }
 
 #glitch-overlay { pointer-events: none; position: fixed; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(255,255,255,0.05) 20px), repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(255,255,255,0.05) 20px); animation: gridMove 30s linear infinite; opacity: 0.2; }
