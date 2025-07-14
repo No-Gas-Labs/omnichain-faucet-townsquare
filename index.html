@@ -1,11 +1,11 @@
+<!DOCTYPE html>
 <!-- 🪓 No_Gas_Labs™ — TownSquare Build -->
 <!-- Fuck yes. Let’s make these wallets sing. -->
 <!-- If this breaks, blame recursion not the dev. -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>🏛️ Omnichain Faucet TownSquare</title>
   <style>
     body {
@@ -14,6 +14,7 @@
       color: #ffd700;
       font-family: 'Courier New', monospace;
     }
+
     header {
       background: #1a1a2e;
       color: #ffd700;
@@ -22,6 +23,7 @@
       justify-content: space-between;
       padding: 1rem;
     }
+
     button {
       background: #ff00c8;
       color: #ffd700;
@@ -30,6 +32,7 @@
       font-size: 1rem;
       border-radius: 4px;
     }
+
     #grid {
       display: grid;
       grid-template-columns: repeat(10, 1fr);
@@ -37,6 +40,7 @@
       gap: 2px;
       margin: 1rem;
     }
+
     .tile {
       background: #1a1a2e;
       position: relative;
@@ -46,11 +50,13 @@
       font-size: 0.8rem;
       color: #ffd700;
     }
+
     .shrine {
       background: #ff00c8;
       cursor: pointer;
       overflow: hidden;
     }
+
     .shrine:hover::before {
       content: '';
       position: absolute;
@@ -62,6 +68,7 @@
       mix-blend-mode: screen;
       animation: glitch 1s infinite;
     }
+
     @keyframes glitch {
       0% { transform: translate(0,0); }
       20% { transform: translate(-2px,2px); }
@@ -70,13 +77,16 @@
       80% { transform: translate(1px,-1px); }
       100% { transform: translate(0,0); }
     }
+
     #xp {
       font-size: 1rem;
       padding: 0 1rem;
     }
+
     #wallet-modal.hidden {
       display: none;
     }
+
     .modal-content {
       background: #1a1a2e;
       border: 2px solid #ff00c8;
@@ -87,6 +97,7 @@
       width: 90%;
       max-width: 300px;
     }
+
     .modal-content img {
       width: 100%;
     }
@@ -97,7 +108,11 @@
     <h1>Omnichain Faucet TownSquare</h1>
     <button id="wallet-btn">Connect</button>
     <div id="xp">XP: <span id="xpCount">0</span></div>
-  </header>  <main id="grid"></main>  <div id="wallet-modal" class="hidden">
+  </header>
+
+  <main id="grid"></main>
+
+  <div id="wallet-modal" class="hidden">
     <div class="modal-content">
       <p id="wallet-text">Scan to connect</p>
       <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAQMAAABKLAcXAAAABlBMVEX///8AAABVwtN+AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAzUlEQVQ4jaWUOw6EMAxEB1Gk5AbLTeBaKVYiUi62uYm5QUoKhNfOfgQdcdxEj2KUmYkBLrMwc3jAz3JSBXnARRrCBPQNNLMTTUwjxzYqmgYKHW+NpI44+5M/A2m6cc2nrO9RGbnLqVIDiabjA0ui7dlCcnRZP0aqoRfEEQeAd5jJY1RNl+jTipE6EjF9IRBH90mnp4ETa5tWKt0eauybron0ZQUMrPFQDel2HFrObzfNtOYlsTbTRLKp0m0dlf+LhDq2UMmz3OOfroEu8waEPGD3j5lKAgAAAABJRU5ErkJggg==" alt="wallet qr">
@@ -106,7 +121,9 @@
       <button id="wallet-disconnect" class="hidden">Disconnect</button>
       <button id="wallet-close">Close</button>
     </div>
-  </div>  <script>
+  </div>
+
+  <script>
     const xpEl = document.querySelector('#xpCount');
     let xp = Number(localStorage.getItem('xp')) || 0;
     xpEl.textContent = xp;
@@ -161,5 +178,6 @@
     }
 
     buildGrid();
-  </script></body>
+  </script>
+</body>
 </html>
