@@ -1,0 +1,19 @@
+{
+  "name": "omnichain-faucet-townsquare",
+  "version": "1.0.0",
+  "description": "<!-- 🪓 No_Gas_Labs™ — TownSquare Build --> <!-- Fuck yes. Let’s make these wallets sing. --> <!-- If this breaks, blame recursion not the dev. --> # omnichain-faucet-townsquare Gasless onboarding RPG for EOS, TON, and SUI. Real faucets. Real chains. Built for grant deployment, not simulation.",
+  "main": "script.js",
+  "scripts": {
+    "test": "vitest run",
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "eslint": "^9.31.0",
+    "husky": "^9.1.7",
+    "vitest": "^3.2.4"
+  }
+}
