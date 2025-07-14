@@ -11,30 +11,21 @@
 </head>
 <body>
   <header>
-    <h1>TownSquare</h1>
-    <button id="wallet-btn">Connect Wallet</button>
-    <div id="xp">XP: <span>0</span></div>
+    <h1>Omnichain Faucet TownSquare</h1>
+    <button id="walletButton">Connect Wallet</button>
+    <div id="xpCount">XP: 0</div>
   </header>
-
-  <main>
-    <div id="town-grid"></div>
-    <section id="faucets">
-      <h2>Faucets</h2>
-      <ul>
-        <li data-net="EOS">EOS Shrine</li>
-        <li data-net="TON">TON Shrine</li>
-        <li data-net="SUI">SUI Shrine</li>
-      </ul>
-    </section>
+  <main id="shrineGrid">
+    <button class="faucetBtn" data-chain="EOS">EOS</button>
+    <button class="faucetBtn" data-chain="TON">TON</button>
+    <button class="faucetBtn" data-chain="SUI">SUI</button>
   </main>
-
-  <div id="wallet-modal" class="hidden">
-    <div class="modal-content">
+  <div id="walletModal" class="modal hidden">
+    <div class="modalContent">
       <p>Wallet connection is mocked.</p>
-      <button id="close-wallet">Close</button>
+      <button id="closeWallet">Close</button>
     </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>

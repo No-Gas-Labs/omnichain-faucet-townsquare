@@ -3,71 +3,54 @@
 /* If this breaks, blame recursion not the dev. */
 
 body {
-  background: #0d0d2b;
-  color: #ffd700;
-  font-family: 'Georgia', serif;
+  background: #0f0f23;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em;
-  background: #1a1a2e;
-  border-bottom: 2px solid #ff00c8;
+  padding: 1rem;
+  background: #000000;
+  color: #ff00c8;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 1.5em;
+#xpCount {
+  font-size: 1rem;
+}
+
+#shrineGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1rem;
 }
 
 button {
   background: #1a1a2e;
-  color: #ffd700;
+  color: #ff00c8;
   border: 2px solid #ff00c8;
-  padding: 0.5em 1em;
+  padding: 1rem;
   border-radius: 8px;
-  font-size: 1em;
+  font-size: 1rem;
 }
 
-main {
-  padding: 1em;
-}
-
-#town-grid {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 2px;
-  max-width: 100%;
-}
-
-.tile {
-  background: #1a1a2e;
-  padding-bottom: 100%;
-  position: relative;
-}
-
-.tile.npc {
+button:hover {
+  color: #0f0f23;
   background: #ff00c8;
+  animation: pulse 1s infinite;
 }
 
-#faucets ul {
-  list-style: none;
-  padding: 0;
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 #ff00c8; }
+  70% { box-shadow: 0 0 10px 10px rgba(255,0,200,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,0,200,0); }
 }
 
-#faucets li {
-  margin: 0.5em 0;
-  padding: 1em;
-  background: #1a1a2e;
-  border: 1px solid #ff00c8;
-  border-radius: 8px;
-}
-
-#wallet-modal {
+.modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -83,15 +66,11 @@ main {
   display: none;
 }
 
-.modal-content {
+.modalContent {
   background: #1a1a2e;
+  padding: 2rem;
   border: 2px solid #ff00c8;
-  color: #ffd700;
-  padding: 2em;
+  color: #ffffff;
   border-radius: 8px;
   text-align: center;
-}
-
-#xp {
-  font-size: 1em;
 }
