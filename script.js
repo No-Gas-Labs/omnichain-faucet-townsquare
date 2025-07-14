@@ -1,5 +1,6 @@
-// 🪓 No_Gas_Labs™ — TownSquare Build // Fuck yes. Let’s make these wallets sing. // If this breaks, blame recursion not the dev.
-// 🪓 No_Gas_Labs™ — TownSquare Build // Fuck yes. Let’s make these wallets sing. // If this breaks, blame recursion not the dev.
+// 🪓 No_Gas_Labs™ — TownSquare Build
+// Fuck yes. Let’s make these wallets sing.
+// If this breaks, blame recursion not the dev.
 
 document.addEventListener('DOMContentLoaded', () => { const grid = document.getElementById('grid'); const xpCounter = document.getElementById('xpCount'); const modal = document.getElementById('wallet-modal'); const walletBtn = document.getElementById('wallet-btn'); const closeBtn = document.getElementById('wallet-close');
 
